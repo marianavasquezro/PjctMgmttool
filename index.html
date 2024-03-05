@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="Assets/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Project Management</h1>
+        <div class="menu">
+            <button onclick="showExpenseTracker()">Tasks</button>
+            <button onclick="showDashboard()">Tasks Status</button>
+        </div>
+        <div id="expenseTracker">
+            <h2>Tasks Dashboard</h2>
+            <form id="taskForm">
+                <label for="taskDescription">Task Description:</label>
+                <input type="text" id="taskDescription" required>
+                <label for="taskStatus">Task Status:</label>
+                <select id="taskStatus" required>
+                    <option value="pending">Pending to Start</option>
+                    <option value="working">Working on it</option>
+                    <option value="completed">Completed</option>
+                </select>
+                <button type="button" onclick="addTask()">Add Task</button>
+            </form>
+            <ul id="expenseList"></ul>
+        </div>
+        
+        <div id="dashboard" style="display: none;">
+            <h2>See My Dashboard</h2>
+            <canvas id="pieChart" width="400" height="400"></canvas>
+            <button onclick="goToMainPage()">Go Back to Main Page</button>
+        </div>
+    </div>
+
+    
+    
+    <script src="Assets/main.js"></script>
+    <script src="Assets/chart.js"></script>
+</body>
